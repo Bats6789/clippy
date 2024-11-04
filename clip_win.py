@@ -117,6 +117,7 @@ DEFAULT_BG = COLORS['B_BLK']
 PLACEHOLDER_CHAR = '.'
 PLACEHOLDER_COLOR = F"{COLORS['F_BLK']}{COLORS['B_BLK']}"
 PLACEHOLDER = F'{PLACEHOLDER_COLOR}{PLACEHOLDER_CHAR}'
+RESTORE_STATE = '\033[0m'
 
 # CURSOR ANSI ESCAPE PATTERNS
 CURSOR_UP = '\033[1A'  # moves cursor up one line
@@ -362,7 +363,7 @@ class Clip:
         self.play_clip()
         self.loop_clip()
         sys.stdout.write(CURSOR_ON)
-        sys.stdout.write(COLORS['F_WHT'] + COLORS['B_BLK'])
+        sys.stdout.write(RESTORE_STATE)
 
 
 def clippy(path, speed, cycles, color):
